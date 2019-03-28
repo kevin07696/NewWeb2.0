@@ -1,5 +1,3 @@
-console.log('it works')
-
 $(document).ready(function(){
     $('.submit').click(function (event) {
         console.log('clicked button')
