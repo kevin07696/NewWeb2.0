@@ -2704,15 +2704,15 @@ input, select, textarea {
 			}
 
 			.tiles article.style4 > .image:before {
-				background-color: #3a9679;
+				background-color: #233142;
 			}
 
 			.tiles article.style5 > .image:before {
-				background-color: #fabc60;
+				background-color: #4f9da6;
 			}
 
 			.tiles article.style6 > .image:before {
-				background-color: #e16262;
+				background-color: #facf5a;
 			}
 
 			body:not(.is-touch) .tiles article:hover > .image {
