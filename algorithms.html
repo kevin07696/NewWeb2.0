@@ -98,22 +98,20 @@ int main(){
 						<div class="inner">
 							<section>
 								<h2>Get in touch</h2>
-								<form method="post" action="formHandler.php">
+								<form action="https://formspree.io/kevinlam07696@gmail.com" method="POST">
 									<div class="fields">
 										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
+											<input type="text" name="name" id="name" class="name" placeholder="Name" />
 										</div>
 										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
+											<input type="email" name="email" id="email" class="email" placeholder="Email" />
 										</div>
 										<div class="field">
-											<textarea name="subject" id="subject" placeholder="Subject"></textarea>
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
+											<textarea name="message" id="message" class="message" placeholder="Message"></textarea>
 										</div>
 									</div>
-									<ul class="actions">
+									<div class="status"></div>
+									<ul class="actions submit">
 										<li><input type="submit" value="Send" class="primary" /></li>
 									</ul>
 								</form>
@@ -126,12 +124,13 @@ int main(){
 									<!-- <li><a href="#" class="icon style2 fa-dribbble"><span class="label">Dribbble</span></a></li> -->
 									<li><a href="https://github.com/kevin07696" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
 									<!-- <li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li> -->
-									<li><a href="tel:3478363508" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
+									<!-- <li><a href="tel:3478363508" class="icon style2 fa-phone"><span class="label">Phone</span></a></li> -->
+									<li><a href="mailto:kevinlam07696@gmail.com" class="icon style2 fa-email">Email</a></li>
 									<li><a href="https://www.linkedin.com/in/kevinlams/" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
 								</ul>
 							</section>
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; Powered by Persperation and Ions</li>
 							</ul>
 						</div>
 					</footer>

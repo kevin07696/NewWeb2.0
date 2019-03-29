@@ -3,7 +3,6 @@ $(document).ready(function(){
         console.log('clicked button')
 
         var email = $('.email').val()
-        var subject = $('.subject').val()
         var message = $('.message').val()
         var statusElm = $('.status')
         statusElm.empty()
@@ -13,13 +12,6 @@ $(document).ready(function(){
         } else {
             event.preventDefault()
             statusElm.append('<div>Email is not valid</div>')
-        }
-
-        if(subject.length >= 2) {
-            statusElm.append('<div>Subject is valid</div>')
-        } else {
-            event.preventDefault()
-            statusElm.append('<div>Subject is not valid</div>')
         }
 
         if(message.length >= 10) {
