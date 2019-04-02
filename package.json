@@ -6,7 +6,6 @@
     },
     "dependencies": {
         "express": "^4.16.4",
-        "pg": "^7.9.0"
     },
     "author": "Kevin Lam",
     "license": "ISC"
