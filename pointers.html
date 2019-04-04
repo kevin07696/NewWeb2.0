@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<!-- generics -->	
+		<link rel="icon" href="images/roboto-logo_32x.png">
+		<link rel="icon" href="images/roboto-logo_48x.png">
+		<link rel="icon" href="images/roboto-logo_64x.png">
+		<link rel="icon" href="images/roboto-logo_72x.png">
+		<link rel="icon" href="images/roboto-logo_96x.png">
+		<link rel="icon" href="images/roboto-logo_128x.png">
+		<link rel="icon" href="images/roboto-logo_256x.png">
+		<!-- Android -->
+		<link rel="shortcut icon" sizes="196x196" href=images/roboto-logo_196x.png>
+		<!-- iOS -->
+		<link rel="apple-touch-icon" href="images/roboto-logo_120x.png" sizes="120x120">
+		<link rel="apple-touch-icon" href="images/roboto-logo_152x.png" sizes="152x152">
+		<link rel="apple-touch-icon" href="images/roboto-logo_180x.png" sizes="180x180">
+		<title>Generic</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/roboto-logo_512x.png" alt="roboto-logo" /></span><span class="title">Kevin_Lam</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">About</a></li>
+							<li><a href="generic.html">Industry News</a></li>
+							<li><a href="images/My Resume.pdf">Resume</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Introduction to Pointers</h1>
+							<pre><code>
+#include &ltiostream&gt
+
+int main() {
+	int b = 10;
+	int *a = &b;
+	std::cout &lt&lt "The address location of b = " &lt&lt &b &lt&lt std::endl;
+	std::cout &lt&lt "The content at the pointer a = "&lt&lt a &lt&lt std::endl;
+	std::cout &lt&lt "a points to the content at b = "&lt&lt *a &lt&lt std::endl;
+	return 0;
+}
+							</code></pre>
+							<br>
+							<span class="image main"><img src="images/Pointers.png" alt="" /></span>
+							<p class="subtitles">Let's Learn About Memory</p>
+							<p>Ask permission from the computer to allocate memory space to store a datatype (in this case int). Name the allocated memory b.</p>
+							<pre><code>int b;</code></pre>
+							<p>By assigning a value to b, we store the integer 10 at the memory location we call b.</p>
+							<pre><code>b = 10;</code></pre>
+							<p>Ask the computer to read the content at b. Next, add that content to the integer 1. Then, I am asking for the summation to be assigned to b. Notice that 1 is not a double like 1.0. Since b only has enough memory for integer values, adding other datatypes like std::string, double, or long int can cause unpredictable errors.</p>
+							<pre><code>b = b + 1;</code></pre>					
+
+							
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form action="https://formspree.io/kevinlam07696@gmail.com" method="POST">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" class="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" class="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" class="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<div class="status"></div>
+									<ul class="actions submit">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="https://facebook.com/kevinlamlamlam" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="https://www.instagram.com/kevin.lambs/" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<!-- <li><a href="#" class="icon style2 fa-dribbble"><span class="label">Dribbble</span></a></li> -->
+									<li><a href="https://github.com/kevin07696" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+									<!-- <li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li> -->
+									<!-- <li><a href="tel:3478363508" class="icon style2 fa-phone"><span class="label">Phone</span></a></li> -->
+									<li><a href="https://www.linkedin.com/in/kevinlams/" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Powered by Persperation and Ions</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
