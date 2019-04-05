@@ -65,6 +65,7 @@
 					<div id="main">
 						<div class="inner">
 							<h1>Introduction to Pointers</h1>
+							<p>This explanation of pointers will be written in cpp. Let's try compiling:</p>
 							<pre><code>
 #include &ltiostream&gt
 
@@ -84,10 +85,32 @@ int main() {
 							<pre><code>int b;</code></pre>
 							<p>By assigning a value to b, we store the integer 10 at the memory location we call b.</p>
 							<pre><code>b = 10;</code></pre>
-							<p>Ask the computer to read the content at b. Next, add that content to the integer 1. Then, I am asking for the summation to be assigned to b. Notice that 1 is not a double like 1.0. Since b only has enough memory for integer values, adding other datatypes like std::string, double, or long int can cause unpredictable errors.</p>
+							<p>Ask the computer for permission to read the content at b. Next, add the content to the integer 1. Then, I am asking for the summation to be assigned to b. Notice that 1 is not a double like 1.0. Since b only has enough memory for integer values, adding other datatypes like std::string, double, or long int can cause unpredictable errors.</p>
 							<pre><code>b = b + 1;</code></pre>					
+							<P>When you ask the computer to read at the memory location named b, you are accessing a numerical address in hexadecimal. To call the serial number location of your variable b use the ampersand symbol, &:</p>
+							<pre><code>std::cout &lt&lt "The address location of b = " &lt&lt &b &lt&lt std::endl;</code></pre>
+							<p>To call the hexadecimal address in numbers only:</p>
+							<pre><code>std::cout &lt&lt (long int)(&b) &lt&lt std::endl;</code></pre>
+							<p class="subtitles">The Mutator Problem</p>
+							<p>An accessor only accesses or "gets" the variables. That's why accessors are oftentimes known as get functions. Thus, the variables remain constant.</p>
+							<pre><code>
+#include &ltiostream&gt
 
-							
+int getvar(int content) {
+	std::cout &lt&lt (long int) &content &lt&lt std::endl;
+	return content;
+}
+
+int main() {
+	int b = 10;
+	b = b + 1;
+
+	std::cout &lt&lt (long int) &b &lt&lt std::endl;
+	std::cout &lt&lt getvar(b) &lt&lt std::endl;
+	return 0;
+}
+							</code></pre>
+
 						</div>
 					</div>
 
