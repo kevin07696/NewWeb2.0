@@ -7,20 +7,12 @@
 <html>
 	<head>
 		<!-- generics -->	
-		<link rel="icon" href="images/roboto-logo_32x.png">
-		<link rel="icon" href="images/roboto-logo_48x.png">
-		<link rel="icon" href="images/roboto-logo_64x.png">
-		<link rel="icon" href="images/roboto-logo_72x.png">
-		<link rel="icon" href="images/roboto-logo_96x.png">
-		<link rel="icon" href="images/roboto-logo_128x.png">
-		<link rel="icon" href="images/roboto-logo_256x.png">
+		<link rel="icon" href="images/roboto-logo.png">
 		<!-- Android -->
-		<link rel="shortcut icon" sizes="196x196" href=images/roboto-logo_196x.png>
+		<link rel="shortcut icon" href=images/roboto-logo.png>
 		<!-- iOS -->
-		<link rel="apple-touch-icon" href="images/roboto-logo_120x.png" sizes="120x120">
-		<link rel="apple-touch-icon" href="images/roboto-logo_152x.png" sizes="152x152">
-		<link rel="apple-touch-icon" href="images/roboto-logo_180x.png" sizes="180x180">
-		<title>Generic</title>
+		<link rel="apple-touch-icon" href="images/roboto-logo.png">
+		<title>std::cout&lt&lt"Pointers";</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -64,9 +56,9 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Introduction to Pointers</h1>
+							<h1>An In-Depth Look At Pointers </h1>
 							<p>This explanation of pointers will be written in cpp. Let's try compiling:</p>
-							<pre><code>
+							<pre style="white-space: pre-wrap;"><code>
 #include &ltiostream&gt
 
 int main() {
@@ -81,23 +73,22 @@ int main() {
 							<br>
 							<span class="image main"><img src="images/Pointers.png" alt="" /></span>
 							<p class="subtitles">Let's Learn About Memory</p>
-							<p>Ask permission from the computer to allocate memory space to store a datatype (in this case int). Name the allocated memory b.</p>
-							<pre><code>int b;</code></pre>
-							<p>By assigning a value to b, we store the integer 10 at the memory location we call b.</p>
-							<pre><code>b = 10;</code></pre>
-							<p>Ask the computer for permission to read the content at b. Next, add the content to the integer 1. Then, I am asking for the summation to be assigned to b. Notice that 1 is not a double like 1.0. Since b only has enough memory for integer values, adding other datatypes like std::string, double, or long int can cause unpredictable errors.</p>
+							<p>Ask permission from the computer to allocate memory space to store a datatype (in this case int). Name the allocated memory <i>b</i>.</p>
+							<pre style="white-space: pre-wrap;"><code>int b;</code></pre>
+							<p>By assigning a value to <i>b</i>, we store the integer 10 at the memory location we call <i>b</i>.</p>
+							<pre style="white-space: pre-wrap;"><code>b = 10;</code></pre>
+							<p>Ask the computer for permission to read the content at <i>b</i>. Next, add the content to the integer 1. Then, I am asking for the summation to be assigned to <i>b</i>. Notice that 1 is not a double like 1.0. Since <i>b</i> only has enough memory for integer values, adding other datatypes like std::string, double, or long int can cause unpredictable errors.</p>
 							<pre><code>b = b + 1;</code></pre>					
-							<P>When you ask the computer to read at the memory location named b, you are accessing a numerical address in hexadecimal. To call the serial number location of your variable b use the ampersand symbol, &:</p>
+							<p>When you ask the computer to read at the memory location named <i>b</i>, you are accessing a numerical address in hexadecimal. To call the serial number location of your variable <i>b</i> use the ampersand symbol, &:</p>
 							<pre><code>std::cout &lt&lt "The address location of b = " &lt&lt &b &lt&lt std::endl;</code></pre>
 							<p>To call the hexadecimal address in numbers only:</p>
 							<pre><code>std::cout &lt&lt (long int)(&b) &lt&lt std::endl;</code></pre>
-							<p class="subtitles">The Mutator Problem</p>
-							<p>An accessor only accesses or "gets" the variables. That's why accessors are oftentimes known as get functions. Thus, the variables remain constant.</p>
-							<pre><code>
+							<p class="subtitles">Introduction to Accessors and Mutators</p>
+							<p>An <b>accessor</b> only <i>has access to</i> or "gets" the variables. That's why accessors are oftentimes known as get functions. Thus, the variables remain constant. Let's compile the get function, <i>getvar</i></p>
+							<pre style="white-space: pre-wrap;"><code>
 #include &ltiostream&gt
 
 int getvar(int content) {
-	std::cout &lt&lt (long int) &content &lt&lt std::endl;
 	return content;
 }
 
@@ -105,12 +96,46 @@ int main() {
 	int b = 10;
 	b = b + 1;
 
-	std::cout &lt&lt (long int) &b &lt&lt std::endl;
 	std::cout &lt&lt getvar(b) &lt&lt std::endl;
 	return 0;
 }
 							</code></pre>
+							<ol>
+								<li>Request the memory for an integer and name it b.</li>
+								<li>At that memory location or address assign the integer 10.</li>
+								<li>Read the content at the address named b.</li>
+								<li>Add 1 to the content at b.</li>
+								<li>Write the content into the address of b.</li>
+								<li>Set b as the argument for the function getvar</li>
+								<li>Request the memory for an integer and name it content.</li>
+								<li>Read the content in b and copy that content into the address named <i>content</i>.</li>
+								<li>Return content</li>
+								<li>Print the return value of the function getvar</li>
+							</ol>
+							<p>On the other hand, <b>mutators</b> change or "set" the values of variables. That's why mutators are called setter functions. Let's try modifying <i>getvar</i> to a mutator function by changing the value in <i>b</i>.</p>
+							<pre style="white-space: pre-wrap;"><code>
+#include &ltiostream&gt
 
+int getvar(int content) {
+	std::cout &lt&lt "The location of content is at: " &lt&lt (long int) &content &lt&lt std::endl;
+	content = content + 1;
+	return content;
+}
+
+int main() {
+	int b = 10;
+	b = b + 1;
+
+	std::cout &lt&lt "The value of content is: " &lt&lt getvar(b) &lt&lt std::endl;
+	std::cout &lt&lt "The location of b is at: " &lt&lt (long int) &b &lt&lt std::endl;
+	std::cout &lt&lt "The value of b is: " &lt&lt b &lt&lt std::endl;
+	return 0;
+}
+							</code></pre>
+							
+							<pre><code>int* a = &b</code></pre>
+							<p>Because the memory location of b is stored in a, the pointer <i>a</i> can also access the value b.</p>
+						
 						</div>
 					</div>
 
@@ -150,8 +175,8 @@ int main() {
 								</ul>
 							</section>
 							<ul class="copyright">
-								<li>&copy; Powered by Persperation and Ions</li>
-							</ul>
+								<li>&copy; Powered by Perspiration and Ions</li>
+							</ul>	
 						</div>
 					</footer>
 

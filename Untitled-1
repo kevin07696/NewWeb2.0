@@ -1,0 +1,27 @@
+	<p>We can also use the command <b>new</b> to request a new memory location.
+							<pre><code>
+#include &ltiostream&gt
+int main() {
+	int* a;
+	a = new int;
+	*a = 10;
+	std::cout &lt&lt "The Address of the Pointer a = " &lt&lt &a &lt&lt std::endl;
+	std::cout &lt&lt "The Address in the Pointer a = " &lt&lt a &lt&lt std::endl;
+	std::cout &lt&lt "The Content 'a' Points to = " &lt&lt *a &lt&lt std::endl;
+	return 0;
+}
+							</code></pre>
+							<ol>
+								<li>Computer please give me the memory to hold the <i>address</i> of one integer and name it <i>a</i></li>
+								<li>Use the command <i>new</i> to ask permission for enough memory to hold an integer.</li>
+								<li>Store the the memory location of that integer inside the pointer. <i>a</i>.</li>
+								<li>Go to the address stored in <i>a</i>.</li>
+								<li>Store the integer 10 within that address.</li>
+								<li>Use the ampersand sign, &, to access the address of the pointer <i>a</i></li>
+								<li>To find the address of the new integer, print the memory location <i>a</i> because the memory location is stored in <i>a</i></li>
+								<li>To print the value in the new integer, use *.</li>
+							</ol>
+							<p>Another way to code this is:</p>
+							<pre><code>a = new int(10);</code></pre>
+							<p></p>
+
